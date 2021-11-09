@@ -1,6 +1,5 @@
-# snap-photo-app
-## Snap-photo peer-to-peer sharing application prototype
-### Overview
+# Snap-photo peer-to-peer sharing application prototype
+## Overview
 This document is a high-level design doc for a simple snap-photo p2p sharing web browser application. Web clients will be able to join rooms where a snap-photo will be shared by each of the clients connected to each specific room. Rooms will accept up to 3 users per room. 
 
 Immediately after a user creates or joins a room the application will prompt the user to take a snap-photo & send the file to all other peers in the room. To capture a user’s webcam video stream this application will use the MediaDevices Web API.
@@ -19,6 +18,9 @@ In the socket.io architecture a server contains a certain number of sockets. Eac
 The rooms feature in socket.io is implemented by an adapter that stores the relationships between socket instances & rooms as well as supporting broadcasting events to all clients. This adapter consists in 2 JS Map structures with the following description:
 * sids: Map<SocketId, Set<Room>>
 * rooms: Map<Room, Set<SocketId>>
+
+
+![Figure 1](/snap-photo-app-architecture.png)
   
 The signaling service will be an asynchronous event-driven service. Low-level communications protocols will be handled by Engine.io as it implements WebSocket (**ws://**) bidirectional communication channels & HTTP long-polling as a fallback communication mechanism where WebSocket is not fully supported.
   
