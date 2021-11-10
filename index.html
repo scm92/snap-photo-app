@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title></title>
+
+  <link rel="stylesheet" href="/css/main.css" />
+
+</head>
+
+<body>
+
+  <h1>Snap-photo peer-to-peer sharing application prototype</h1>
+
+  <div id="videoCanvas">
+    <video id="camera" autoplay playsinline></video>
+    <canvas id="photo"></canvas>
+  </div>
+
+  <div id="buttons">
+    <button id="snap">Snap</button><span> then </span><button id="send">Send</button>
+  </div>
+
+  <div id="incoming">
+    <h2>Incoming peer photo 1</h2>
+    <div id="trail"></div>
+  </div>
+
+    <div id="incoming2">
+    <h2>Incoming peer photo 2</h2>
+    <div id="trail2"></div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
